@@ -39,20 +39,21 @@ Please note that the 5x virtual machines will use 3GB of RAM in total when up an
 
 PREREQUISITES: 
 
-1. VirtualBox needs to be installed. No configuration steps needed, just click through the installer. 
+1. VirtualBox needs to be installed on your local machine. No configuration steps needed, just click through the installer. 
 I've got the latest stable from: https://www.virtualbox.org/wiki/Downloads
 The version I've used was: http://download.virtualbox.org/virtualbox/4.3.14/VirtualBox-4.3.14-95030-OSX.dmg
 
-2. Vagrant needs to be installed. Again, no configuation steps, just click through the installer. 
+2. Vagrant needs to be installed on your local machine. Again, no configuation steps, just click through the installer. 
 I've got mine from: https://www.vagrantup.com/downloads.html
-The version Ive used was: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3.dmg
+The version I've used was: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3.dmg
 
-3. Chef Client needs to be installed and in a working state on your local machine. Vagrant will use your local knife in order to add/remove your nodes to/from the Chef server. 
+3. Chef Client needs to be installed and in a working state on your local machine. Vagrant will use your local Knife in order to add/remove your nodes to/from the Chef server. 
 I've got mine from: http://www.getchef.com/chef/install/
 Just click on "Chef Client", select your OS, Version, and Architecture, and follow the steps on the page. The Omnibus installer will take care of the rest. 
 
 4. Git needs to be installed and in a working state on your local machine. But otherwise you could not clone this repo anyhow. ;-) 
-Once you've got all that in place, you should be ready to go. Yay! 
+
+Once you've got all that in place, you should be ready to go. Yay!!!  
 
 
 
