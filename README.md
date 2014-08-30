@@ -59,5 +59,16 @@ Just click on "Chef Client", select your OS, Version, and Architecture, and foll
 
 Once you've got all that in place, you should be ready to go. Yay!!!  
 
+INSTALLATION: 
+
+- Check out this git repo, just place it anywhere on your system, e.g. in your home directory:  
+cd ~
+git clone git@github.com:sonykus/vagrant-chef-mongodb.git
+- CWD into the new directory created
+cd vagrant-chef-mongodb
+- NOTE: If you're not yet familiar with Vagrant, this could be a good moment to take a quick look at the Vagrant documentation: 
+https://docs.vagrantup.com/v2/
+
+
 
 
