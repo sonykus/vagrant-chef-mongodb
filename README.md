@@ -20,7 +20,7 @@ NOTES:
 
 Before you tell me, I DO KNOW that: 
 - I've used some quick-and-dirty scripting here and there, some parts could be done in far more elegant ways. I might come back with improvements over time. Right now, the whole thing just works as it is. There is room for improvement, and further extensions. Feel free to contribute! 
-- there is a (much-much better!) "mongodb" cookbook available on the Supermarket, and I could have used that one, readily made. Yes, you can download it and use it. Here in this project, I wanted to create a small sample cookbook myself. (See "Targets" above.) 
+- There is a (much-much better!) "mongodb" cookbook available on the Supermarket, and I could have used that one, readily made. Yes, you can download it and use it, it's really cool. Here in this project, I wanted to create a small sample cookbook myself. (See "Targets" above.) 
 
 WHAT'S IN THE BOX: 
 
