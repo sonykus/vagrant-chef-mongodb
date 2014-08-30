@@ -5,7 +5,7 @@ A Vagrant script framework example that provisions a Chef Server, a ChefDK box, 
 
 BACKGROUND: 
 
-I've written this sample script framework while attending the Mongo University M102 "MongoDB for DBAs" course. 
+I've written this sample script framework while attending the Mongo University M102 "MongoDB for DBAs" course. It roughly reflects "Chapter 4: Replication". But it could also be used as a good textbook example on how to set up Chef, write your first cookbook, then spin up some new machines and apply your recipes. 
 
 My TARGETS to achieve with this small weekend project have been to: 
 - play around with Vagrant using Chef as a provisioner. 
