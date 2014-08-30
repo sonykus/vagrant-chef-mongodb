@@ -87,14 +87,29 @@ Once the image download is complete, Vagrant will start to build out the 5x virt
 - bootstrap and install 'chefdev', your ChefDK and Chef client machine.  
 - on 'chefdev' it will also download chef-repo, and will configure knife.rb for you. 
 - it will create a 'vagrant' Chef user, you can find his initial password sourced inside 'bootstrap_chefdev.sh'. Do not forget to change it at some point later! (ahem.)
-- it will generate a cookbook called 'mymongodb', add some recipes, and some templates to it. Find them all sourced inline inside the bootstrap_chefdev.sh file, if you want to change anything. 
+- it will generate a cookbook called 'mymongodb', then add some recipes and some templates to it. Find them all sourced inline inside the bootstrap_chefdev.sh file, if you would like to change anything. 
 - it will upload the cookbook to the Chef server, and it will also export the 'cookbooks' dir into your working directory for your viewing pleasure. 
-- it will register all nodes, including itself, onto the chef server. It will export the JSON file node definitions in your working directory under '/nodes', if you want to review them. 
+- it will register all nodes, including itself, onto the chef server. It will export the JSON file node definitions in your working directory under the 'nodes' directory, if you want to review them. 
 - it will set up a 'MONGODEV' environment to place the mongo machines into. 
-- it will create a new 'mongoserver' role for the mongodb machines and will update all run lists accordingly. 
+- it will create a new 'mongoserver' role for the mongodb machines and will update all run lists accordingly. It will export the definition into the 'roles' directory, for later review. 
 - after the cooking is done, and the bootstrapping phase is over, 'chefdev' will check itself in with the Chef server and run its own run_list. 
 - bootstrap and install the x3 mongodb servers. 
 - bootstrapping will be minimal, it will only install Chef Client, after which it hands them over to Chef for provisioning. 
 - using the cookbook we've created above, Chef will set up the mongodb repo, and then deploy and configure mongod on the 3x mongo servers. 
 - once the 3rd mongodb server is up, Chef will configure mongodb replication across the 3x mongo servers, using a separate recipe called 'mymongodb::mongod_primary'. The recipe will inject a JavaScript configuration file via the mongo console, in order to complete the installation. 
 
+ONCE YOU'RE ALL DONE: 
+
+- You can verify your installation by connecting to the machines, using "vagrant ssh machine_name" 
+- You can check out the state of the mongodb replication by logging on to any of the mongod machines, and typing 'mongo'
+- From the mongo console, you can issue your favourite commands like: 
+
+rs.conf() , db.isMaster() , or rs.status() , in order to check out the state of the replica set. 
+
+You'll notice that 'mongodb3' box has become PRIMARY. This is due to the fact that in mongo you cannot configure replication before all your boxes are up and running. So we've run that recipe on the 3rd box, as the last step. If this *annoys you* in any way (although it won't matter too much in real life situations), you could change the Vagrantfile to bring up the mongo boxes in reverse order. Then update 'bootstrap_chefdev.sh' and have it apply the 'mongod_primary" recipe to the first server. That's it, no big deal, yo. 
+
+The name of the replica set has been preconfigured to "shard01". You can change this in /etc/mongod.conf alongside with all the other config options, or even better, find it in 'bootstrap_chefdev.sh' where the cookbook is sourced from. Yes, these could all be exported into nice global variables, but that is a bit beyond the scope of this quick weekend project. Okay, maybe I'll do it. Next weekend. Maybe. 
+
+Thanks a lot if you have read this far! Now go hack through those scripts, and play with that thing a little. 
+
+ENJOY! ;-) 
