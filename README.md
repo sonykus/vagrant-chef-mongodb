@@ -30,6 +30,29 @@ After a successful Vagrant run, you will have:
 All the subsequent servers will check in to the Chef Server automagically during the build process. 
 In the end, you can connect to any of the 5 machines above using the "vagrant ssh machine_name" command. 
 
-The Chef server's web interface is also available. Point your browser to https://10.11.12.100/ , accept the fake SSL certificate (you might need to add a security exception) and use the admin credentials found on the first page. 
+The Chef server's web interface is also available. Point your browser to https://10.11.12.100/ , accept the makeshift SSL certificate (you might need to add a security exception) and use the admin credentials found on the first page. 
+
+SYSTEM REQUIREMENTS: 
+I wrote this on a Macbook Pro running OS X 10.8.5 with 16GB of RAM, and haven't tested it anywhere else yet. 
+Please do, and send me some feedback on how it works. In theory, it *should work* on any machine with the Prerequisites (see below) met. 
+Please note that the 5x virtual machines will use 3GB of RAM in total when up and running, plus some overhead from VirtualBox and Vagrant. It should run on a notebook, just make sure that you have 3GB+ free RAM available. 
+
+PREREQUISITES: 
+
+1. VirtualBox needs to be installed. No configuration steps needed, just click through the installer. 
+I've got the latest stable from: https://www.virtualbox.org/wiki/Downloads
+The version I've used was: http://download.virtualbox.org/virtualbox/4.3.14/VirtualBox-4.3.14-95030-OSX.dmg
+
+2. Vagrant needs to be installed. Again, no configuation steps, just click through the installer. 
+I've got mine from: https://www.vagrantup.com/downloads.html
+The version Ive used was: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3.dmg
+
+3. Chef Client needs to be installed and in a working state on your local machine. Vagrant will use your local knife in order to add/remove your nodes to/from the Chef server. 
+I've got mine from: http://www.getchef.com/chef/install/
+Just click on "Chef Client", select your OS, Version, and Architecture, and follow the steps on the page. The Omnibus installer will take care of the rest. 
+
+4. Git needs to be installed and in a working state on your local machine. But otherwise you could not clone this repo anyhow. ;-) 
+Once you've got all that in place, you should be ready to go. Yay! 
+
 
 
