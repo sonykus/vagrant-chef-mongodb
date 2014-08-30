@@ -7,14 +7,14 @@ BACKGROUND:
 
 I've written this sample script framework while attending the Mongo University M102 "MongoDB for DBAs" course. 
 
-My TARGETS to achieve with this small weekend project have been: 
-- to play around with Vagrant bottstrapping in conjunction using Chef as a provisioner. 
-- to learn how to set up Chef, provision a Chef Server and a ChefDK box, and configure everything programatically. 
-- to create an small cookbook for spawning up MongoDB servers. 
-- to build 3x MongoDB boxes with Chef using my own cookbook and recipes created above. 
-- to set up replication between the 3x Mongo boxes, using a simple Chef recipe to configure the replica set. 
-- to automate all of the above down to a single "vagrant up" command. 
-- to sit back and watch the Blinkenlights, as everything comes together, with no interaction required. 
+My TARGETS to achieve with this small weekend project have been to: 
+- play around with Vagrant using Chef as a provisioner. 
+- learn how to set up Chef, provision a Chef Server and a ChefDK box, and how to configure everything programatically. 
+- create an small cookbook for spawning up MongoDB servers. 
+- build 3x MongoDB boxes with Chef using my own cookbook and recipes created above. 
+- set up replication between the 3x Mongo boxes, using a simple Chef recipe to configure the replica set. 
+- automate all of the above down to a single "vagrant up" command. 
+- sit back and watch The Blinkenlights as everything comes together, with no interaction required. 
  
 NOTES: 
 
@@ -30,16 +30,16 @@ After a successful Vagrant run, you will have:
 - 3x MongoDB servers with 512MB RAM, named 'mongodb1', 'mongodb2', 'mongodb3' on '10.11.12.101..103"
 - the 3x mongodb servers will form a replica set named 'shard01' having 'mongodb3' set as PRIMARY. 
 
-All the subsequent servers will check in to the Chef Server automagically during the build process. 
+Each machine will check in to the Chef Server automagically during the build process. 
 In the end, you can connect to any of the 5 machines above using the "vagrant ssh machine_name" command. 
 
-The Chef server's web interface is also available. Point your browser to https://10.11.12.100/ , accept the makeshift SSL certificate (you might need to add a security exception) and use the admin credentials found on the first page. 
+The Chef server's web interface will be also available. Point your browser to https://10.11.12.100/ , accept the makeshift SSL certificate (you might need to add a security exception) then use the admin credentials found on the first page. 
 
 SYSTEM REQUIREMENTS: 
 
-I wrote this on a Macbook Pro running OS X 10.8.5 with 16GB of RAM, and haven't tested it anywhere else yet. 
-Please do, and send me some feedback on how it works. In theory, it *should work* on any machine with the Prerequisites (see below) met. 
-Please note that the 5x virtual machines will use 3GB of RAM in total when up and running, plus some overhead from VirtualBox and Vagrant. It should run on a notebook, just make sure that you have 3GB+ free RAM available. 
+I wrote this on a Macbook Pro running OS X 10.8.5 with 16GB of RAM, and I haven't tested it anywhere else yet. 
+Please do test it, and send me some feedback on how it works. In theory, it *should work* on any machine with the Prerequisites (see below) met. 
+Please note that the 5x virtual machines will use 3GB of RAM in total when up and running, plus some overhead for VirtualBox and Vagrant. It should run on a notebook, just make sure that you have 3GB+ free RAM available. 
 
 PREREQUISITES: 
 
@@ -117,6 +117,6 @@ WHAT ELSE COULD YOU DO?
 
 FINALLY: 
 
-Thanks a lot if you have read this far! Now go hack through those scripts, and play with that thing a little. 
+Thanks a lot if you have read this far! Now go hack through those scripts see how they have been done, and play with that thing for a while. Send me some feedback, if you feel like. 
 
 ENJOY! ;-) 
