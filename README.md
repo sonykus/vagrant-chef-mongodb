@@ -81,24 +81,20 @@ WHAT WILL IT DO? :
 
 If all goes well, you will see Vagrant downloading the 'chef/centos-6.5' virtualbox image from: https://vagrantcloud.com/chef/centos-6.5/version/1/provider/virtualbox.box
 
-Once the image download is complete, Vagrant will start to build the 5x virtual machines in the following steps:
+Once the image download is complete, Vagrant will start to build out the 5x virtual machines in the following steps:
 
-1. Bootstrap, install, and configure 'chefsrv', your Chef Server. 
-
-2. Bootstrap and install 'chefdev', your ChefDK and Chef client machine.  
+- bootstrap, install, and configure 'chefsrv', your Chef Server. 
+- bootstrap and install 'chefdev', your ChefDK and Chef client machine.  
 - on 'chefdev' it will also download chef-repo, and will configure knife.rb for you. 
 - it will create a 'vagrant' Chef user, you can find his initial password sourced inside 'bootstrap_chefdev.sh'. Do not forget to change it at some point later! (ahem.)
 - it will generate a cookbook called 'mymongodb', add some recipes, and some templates to it. Find them all sourced inline inside the bootstrap_chefdev.sh file, if you want to change anything. 
 - it will upload the cookbook to the Chef server, and it will also export the 'cookbooks' dir into your working directory for your viewing pleasure. 
-- it will register all nodes, including itself, onto the chef server. 
-- it will create a 'MONGODEV' environment to place the mongo machines into. 
-- it will create a new 'mongoserver' role for the mongodb machines and will update all run_lists. 
-- after the cooking is done, and the bootstrapping phase is over, 'chefdev' will check itself in with the Chef server. 
-
-
-3. Bootstrap and install the x3 mongodb servers. 
-- bootstrapping is minimal, it will only install Chef Client, and then it hands the machines over to Chef for provisioning. 
-
-4. Using the cookbook we've fabricated above, Chef will deploy and configure mongodb on the 3x mongod servers. 
-5. Once the 3rd mongodb server is up, Chef will configure mongodb replication across the 3x mongo servers, using a separate recipe called 'mongod_primary', which will inject a JavaScript configuration file into mongo, in order to complete the installation. 
+- it will register all nodes, including itself, onto the chef server. It will export the JSON file node definitions in your working directory under '/nodes', if you want to review them. 
+- it will set up a 'MONGODEV' environment to place the mongo machines into. 
+- it will create a new 'mongoserver' role for the mongodb machines and will update all run lists accordingly. 
+- after the cooking is done, and the bootstrapping phase is over, 'chefdev' will check itself in with the Chef server and run its own run_list. 
+- bootstrap and install the x3 mongodb servers. 
+- bootstrapping will be minimal, it will only install Chef Client, after which it hands them over to Chef for provisioning. 
+- using the cookbook we've created above, Chef will set up the mongodb repo, and then deploy and configure mongod on the 3x mongo servers. 
+- once the 3rd mongodb server is up, Chef will configure mongodb replication across the 3x mongo servers, using a separate recipe called 'mymongodb::mongod_primary'. The recipe will inject a JavaScript configuration file via the mongo console, in order to complete the installation. 
 
