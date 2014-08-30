@@ -118,6 +118,6 @@ WHAT ELSE COULD YOU DO?
 
 FINALLY: 
 
-Thanks a lot if you have read down this far! So this is where this page ends. Now go hack through those scripts see how they have been made, and play around with that thing for a while. Sure, send me some feedback as well, if you feel like. 
+Thanks a lot if you have read down this far! So this is where this page ends. (d'oh!) Now go, hack through those scripts and see how they've been made, and play around with that thing for a while. Sure, you could send me some feedback as well, if you feel like. 
 
 ENJOY! ;-) 
