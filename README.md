@@ -77,9 +77,14 @@ https://docs.vagrantup.com/v2/
 
 vagrant up
 
+WHAT WILL IT DO? : 
+
 If all goes well, you will see Vagrant downloading the 'chef/centos-6.5' virtualbox image from: https://vagrantcloud.com/chef/centos-6.5/version/1/provider/virtualbox.box
+
 Once the image download is complete, Vagrant will start to build the 5x virtual machines in the following steps:
+
 1. Bootstrap, install, and configure 'chefsrv', your Chef Server. 
+
 2. Bootstrap and install 'chefdev', your ChefDK and Chef client machine.  
 - on 'chefdev' it will also download chef-repo, and will configure knife.rb for you. 
 - it will create a 'vagrant' Chef user, you can find his initial password sourced inside 'bootstrap_chefdev.sh'. Do not forget to change it at some point later! (ahem.)
@@ -89,8 +94,11 @@ Once the image download is complete, Vagrant will start to build the 5x virtual 
 - it will create a 'MONGODEV' environment to place the mongo machines into. 
 - it will create a new 'mongoserver' role for the mongodb machines and will update all run_lists. 
 - after the cooking is done, and the bootstrapping phase is over, 'chefdev' will check itself in with the Chef server. 
+
+
 3. Bootstrap and install the x3 mongodb servers. 
 - bootstrapping is minimal, it will only install Chef Client, and then it hands the machines over to Chef for provisioning. 
+
 4. Using the cookbook we've fabricated above, Chef will deploy and configure mongodb on the 3x mongod servers. 
 5. Once the 3rd mongodb server is up, Chef will configure mongodb replication across the 3x mongo servers, using a separate recipe called 'mongod_primary', which will inject a JavaScript configuration file into mongo, in order to complete the installation. 
 
