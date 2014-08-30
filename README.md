@@ -64,6 +64,7 @@ INSTALLATION:
 - Check out this git repo, just place it anywhere on your system, e.g. in your home directory: 
 
 cd ~
+
 git clone git@github.com:sonykus/vagrant-chef-mongodb.git
 
 - Cd into the new directory created: 
