@@ -33,7 +33,7 @@ After a successful Vagrant run, you will have:
 Each machine will check in to the Chef Server automagically during the build process. 
 In the end, you can connect to any of the 5 machines above using the "vagrant ssh machine_name" command. 
 
-The Chef server's web interface will be also available. Point your browser to https://10.11.12.100/ , accept the makeshift SSL certificate (you might need to add a security exception) then use the admin credentials found on the first page. 
+The Chef server's web interface will also be available. Point your browser to https://10.11.12.100/ , accept the makeshift SSL certificate (you might need to add a security exception) then use the admin credentials found on the first page. 
 
 SYSTEM REQUIREMENTS: 
 
