@@ -37,8 +37,9 @@ The Chef server's web interface will also be available. Point your browser to ht
 
 SYSTEM REQUIREMENTS: 
 
-I wrote this on a Macbook Pro running OS X 10.8.5 with 16GB of RAM, and I haven't tested it anywhere else yet. 
-Please do test it, and send me some feedback on how it works. In theory, it *should work* on any machine with the Prerequisites (see below) met. 
+I've scribbled this on a Macbook Pro running OS X 10.8.5, haven't tested it anywhere else yet. 
+
+Please try it out, and send me some feedback on how it works. In theory, this *should work* on any OS, with the Prerequisites (see below) installed properly. 
 Please note that the 5x virtual machines will use 3GB of RAM in total when up and running, plus some overhead for VirtualBox and Vagrant. It should run on a notebook, just make sure that you have 3GB+ free RAM available. 
 
 PREREQUISITES: 
