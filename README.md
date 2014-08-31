@@ -81,6 +81,8 @@ WHAT WILL IT DO? :
 
 If all goes well, you will see Vagrant downloading the 'chef/centos-6.5' virtualbox image from:  https://vagrantcloud.com/chef/centos-6.5/version/1/provider/virtualbox.box 
 
+Don't let the name fool you, this is just a vanilla CentOS 6.5 Virtualbox image, we'll still have to install Chef on top of it. 
+
 Once the image download is complete, Vagrant will start to build out the 5x virtual machines and go through the following steps: 
 
 - Bootstrap, install, and configure 'chefsrv', your Chef Server. 
