@@ -7,7 +7,7 @@ BACKGROUND:
 
 I've written this sample script framework while attending the Mongo University M102 "MongoDB for DBAs" course. It roughly reflects "Chapter 4: Replication". But it could also be used as a decent example on how to set up Chef, write your first cookbook, then spin up some new machines and apply your new recipes against them. 
 
-My TARGETS to achieve with this small weekend project have been to: 
+My GOALS to achieve with this small weekend project have been to: 
 - play around with Vagrant using Chef as a provisioner. 
 - learn how to set up Chef, provision a Chef Server and a ChefDK box, and configure everything programatically. 
 - create a small cookbook for spawning up MongoDB servers. 
@@ -20,7 +20,7 @@ NOTES:
 
 Before you tell me, I DO KNOW that: 
 - I've used some quick-and-dirty scripting here and there, some parts could be done in far more elegant ways. I might come back with improvements over time. Right now, the whole thing just works as it is. There is room for improvement, and further extensions. Feel free to contribute! 
-- There is a (much-much better!) "mongodb" cookbook available on the Supermarket, and I could have used that one, readily made. Yes, you can download it and use it, it's really cool. Here in this project, I wanted to create a small sample cookbook myself. (See "Targets" above.) 
+- There is a (much-much better!) "mongodb" cookbook available on the Supermarket, and I could have used that one, readily made. Yes, you can download it and use it, it's really cool. Here in this project, I wanted to create a small sample cookbook myself. (See "Goals" above.) 
 
 WHAT'S IN THE BOX: 
 
@@ -123,6 +123,6 @@ WHAT ELSE COULD YOU DO?
 
 FINALLY: 
 
-Thanks a lot if you have read down this far! So this is where this page ends. (d'oh!) Now go, hack through those scripts and see what's in there, and play around with that thing for a while. Sure, you could send me some feedback as well, if you feel like. 
+Thanks a lot if you have read down this far! Now go, hack through those scripts, see what's in there, and play around with things for a while. Send me some feedback, if you feel like. 
 
 ENJOY! ;-) 
