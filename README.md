@@ -7,8 +7,8 @@ BACKGROUND:
 
 I've written this sample script framework while attending the Mongo University M102 "MongoDB for DBAs" course. It roughly reflects "Chapter 4: Replication". But it could also be used as a decent example on how to set up Chef, write your first cookbook, then spin up some new machines and apply your new recipes against them. 
 
-My GOALS to achieve with this small weekend project have been to: 
-- play around with Vagrant using Chef as a provisioner. 
+My GOALS with this small weekend project have been to: 
+- play around with Vagrant in conjunction with Chef as a provisioner. 
 - learn how to set up Chef, provision a Chef Server and a ChefDK box, and configure everything programatically. 
 - create a small cookbook for spawning up MongoDB servers. 
 - build 3x MongoDB boxes with Chef using my own cookbook and recipes created above. 
