@@ -9,7 +9,7 @@ I've written this sample script framework while attending the Mongo University M
 
 My GOALS with this small weekend project have been to: 
 - play around with Vagrant in conjunction with Chef as a provisioner. 
-- learn how to set up Chef, provision a Chef Server and a ChefDK box, and configure everything programatically. 
+- learn how to set up Chef, provision a Chef Server and a ChefDK box, and configure everything programmatically. 
 - create a small cookbook for spawning up MongoDB servers. 
 - build 3x MongoDB boxes with Chef using my own cookbook and recipes created above. 
 - set up replication between the 3x Mongo boxes, using a simple Chef recipe to configure the replica set. 
@@ -19,7 +19,7 @@ My GOALS with this small weekend project have been to:
 NOTES: 
 
 Before you tell me, I DO KNOW that: 
-- I've used some quick-and-dirty scripting here and there, some parts could be done in far more elegant ways. I might come back with improvements over time. Right now, the whole thing just works as it is. There is room for improvement, and further extensions. Feel free to contribute! 
+- I've used some quick-and-dirty scripting here and there, some parts could be done in far more elegant ways. I might come back with improvements over time. Right now, the whole thing *just works*, as it is. There is room for improvement, and further extensions. Feel free to contribute! 
 - There is a (much-much better!) "mongodb" cookbook available on the Supermarket, and I could have used that one, readily made. Yes, you can download it and use it, it's really cool. Here in this project, I wanted to create a small sample cookbook myself. (See "Goals" above.) 
 
 WHAT'S IN THE BOX: 
