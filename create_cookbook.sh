@@ -48,6 +48,7 @@ gpgcheck=0
 enabled=1
 MYEOF
 
+echo "Creating the recipe for our main course, mongodb: "
 cat > mymongodb/recipes/default.rb <<-MYEOF
 include_recipe "mymongodb::common"
 
@@ -74,7 +75,9 @@ service "mongod" do
 end
 MYEOF
 
+echo "Generating a mongod config file template: "
 chef generate template mymongodb mongod.conf
+
 echo "Inserting butchered mongod.conf file: "
 cat > mymongodb/templates/default/mongod.conf.erb <<-MYEOF
 # mongod.conf
@@ -126,7 +129,7 @@ oplogSize=1024
 #keyFile=/path/to/keyfile
 MYEOF
 
-echo "Generating a mongo config script for replication:" 
+echo "Generating a mongo config script for replication: " 
 chef generate template mymongodb mongoconfig.js
 echo 'rs.initiate({"_id":"shard01","members":[{"_id":0,"host":"mongodb1.yourdomain.org:27017"},{"_id":1,"host":"mongodb2.yourdomain.org:27017"},{"_id":2,"host":"mongodb3.yourdomain.org:27017"}]})' > mymongodb/templates/default/mongoconfig.js.erb
 
