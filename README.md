@@ -101,7 +101,7 @@ Once the image download is complete, Vagrant will start to build out the 5x virt
 - Using the cookbook we've created above, Chef will configure the mongodb repository, and then download and configure mongod on the 3x mongodb servers. 
 - once the 3rd mongo is up, Chef will configure mongodb replication across the 3x mongo servers, using a separate recipe called 'mymongodb::mongod_primary'. This recipe will inject a JavaScript configuration file via the mongo console, in order to complete the installation. 
 
-ONCE YOU'RE ALL DONE: 
+ONCE YOU'RE DONE: 
 
 - You can verify your installation by connecting to the machines, using "vagrant ssh machine_name". 
 - You can check out the state of the mongodb replication by logging on to any of the mongod machines, and typing 'mongo'. 
