@@ -111,18 +111,18 @@ rs.conf() , db.isMaster() , or rs.status() , in order to check out the state of 
 
 NOTE: 
 
-- You'll notice that the 'mongodb3' box has become PRIMARY. This is due to the fact that in mongo you cannot configure replication before all your boxes are up and running. So we've run that recipe on the 3rd box, as the last step. If this *annoys you* in any way (although it won't matter too much in real life situations), you could change the Vagrantfile to bring up the mongo boxes in reverse order. Then update 'bootstrap_chefdev.sh' and have it apply the 'mongod_primary" recipe to the 1st mongodb server instead of the 3rd one. That's it, no big deal, yo. 
+- We're bringing up the mongodb servers in reverse order, note the 'reverse_each' in the Vagrantfile. In order to form a replica set, all three machines need to be up and running first *before* we attempt to initiate replication. This way, mongodb1 will come up last, and will become PRIMARY. 
 
-- The name of the replica set has been pre-set to "shard01". You can change this in /etc/mongod.conf alongside with all the other config options, or even better, find it in 'bootstrap_chefdev.sh' where the cookbook is sourced from. Yes, these could all be exported into nice global variables, but that is a bit beyond the scope of this quick weekend project. Okay, maybe I'll do it. Next weekend. Maybe. 
+- The name of the replica set has been pre-set to "shard01". You can change this in /etc/mongod.conf alongside with all the other config options, or even better, change it in 'create_cookbook.sh' where the cookbook is sourced from. Yes, these could all be exported into nice global variables, but this was just a quick weekend project. Okay, maybe I'll do it. Next weekend. Maybe. 
 
 WHAT ELSE COULD YOU DO? 
 
-- Cook some new recipes, spin up some other boxes or services to your liking. You now have a working Chef environment to do it in. 
-- Extend your Vagrant installation with plugins to link it to your favourite cloud service provider. Set up your API keys and tokens accordingly, then fire up these boxes inside their cloud, instead of running them on your local machine. 
-- Fire up a dozen or more mongo boxes, create new recipes for 'mongos' and 'mongo config servers' and build out a whole sharded cluster! Hmm, I might even do that, on second thought, but on another weekend. 
+- Write some new recipes, spin up some other boxes or services to your liking. You now have a working Chef environment to cook things in. 
+- Extend your Vagrant installation with plugins, and tie it to your favourite cloud service provider. Set up your API keys and tokens as required, then fire up these boxes inside the cloud, instead of running them on your local machine. 
+- Fire up a dozen or so more mongo boxes, create new recipes for 'mongos' and 'mongo config servers' and build out a whole sharded cluster! Hmm, I might even do that, on second thought, but on another weekend. 
 
 FINALLY: 
 
-Thanks a lot if you have read down this far! Now go, hack through those scripts, see what's in there, and play around with things for a while. Send me some feedback, if you feel like. 
+Thanks a lot if you have read down this far! Now go hack through those scripts, see what's in there, and play around with things for a while. Send me some feedback, if you feel like. 
 
 ENJOY! ;-) 
