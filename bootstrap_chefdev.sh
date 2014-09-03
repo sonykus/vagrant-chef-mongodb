@@ -71,7 +71,7 @@ done
 
 echo "All mongod-s must be up and running in order to initiate a replica set! "
 echo "Applying the special recipe to the third mongo server of the cluster: "
-knife node run_list add mongodb3.yourdomain.org 'recipe[mymongodb::mongod_primary]'
+knife node run_list add mongodb1.yourdomain.org 'recipe[mymongodb::mongod_primary]'
 
 echo "Creating a node definition and a run_list for ourselves as well: "
 echo '{"name":"chefdev.yourdomain.org","chef_environment":"_default","run_list":[],"normal":{}}' > /vagrant/nodes/chefdev.yourdomain.org.json
