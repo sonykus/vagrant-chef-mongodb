@@ -1,0 +1,7 @@
+*.pem
+*.rpm
+.vagrant
+cookbooks
+nodes
+roles
+
