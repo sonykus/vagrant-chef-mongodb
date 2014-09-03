@@ -174,7 +174,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 # MongoDB boxes:
 
-  (1..3).each do |i|
+# We'll bring up the mongo boxes in reverse order, as we would like mongodb1 to become PRIMARY,
+# however all mongos need to be up and running *before* we initiate replication. 
+
+  (1..3).reverse_each do |i|
 
     config.vm.define "mongodb#{i}" do |mongodb|
 
