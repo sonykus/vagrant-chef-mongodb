@@ -28,11 +28,9 @@ cp /vagrant/chef-validator.pem ~/.chef
 echo
 
 echo "Initialising Knife, setting up an initial user: "
-echo "A quick-and-dirty workaround as knife does not seem to accept the '--password' command line option anymore..." 
-echo 'y0urpassword@here' | knife configure -i -y -s "https://10.11.12.100:443" --admin-client-key /vagrant/admin.pem -r ~/chef-repo --validation-key ~/.chef/chef-validator.pem --defaults
+echo "We pipe in the password as a workaround, because knife doesn't seem to accept the '--password' command line option as stated in the docs..." 
+echo 'y0urpassword@here' | knife configure -i -y -s "https://10.11.12.100:443" --admin-client-key /vagrant/admin.pem -r ~/chef-repo --validation-key ~/.chef/chef-validator.pem --defaults 2>/dev/null
 echo "knife[:editor] = '/bin/nano'" >> ~/.chef/knife.rb
-echo "^^^ The 3x stdin erros above are expected (due to my ugly hack), and they are safe to disregard. "
-echo
 
 # Creating a sample cookbook for you: 
 chmod 744 /vagrant/create_cookbook.sh
